@@ -6,7 +6,7 @@ Anything that is not considered here, that you have doubts about or that you thi
 
 ## File & Folder Naming
 
-To have an standard naming we will use [**PascalCase**](https://en.wikipedia.org/wiki/Camel_case) which basically tells us to write the name of a file with the first character of each word being a capital letter and without any spaces, underscores or punctuation. For example, an audio effect could be named **```HeavyBulletImpact.wav```**. Generally **```EveryFilenameShouldBeWrittenInThisFormat.extension```**.
+To have a standard naming we will use [**PascalCase**](https://en.wikipedia.org/wiki/Camel_case) which basically tells us to write the name of a file with the first character of each word being a capital letter and without any spaces, underscores or punctuation. For example, an audio effect could be named **```HeavyBulletImpact.wav```**. Generally **```EveryFilenameShouldBeWrittenInThisFormat.extension```**.
 
 Other important principles that should be followed are:
 
@@ -14,18 +14,18 @@ Other important principles that should be followed are:
 - Don't use version numbers or words, that means that you shouldn't add things like ```v1```, ```final``` or ```WIP``` to a filename.
 - Avoid abbreviations where possible: use ```SmallRedHoverboard``` instead of ```SRHoverboard```.
 - Use numbers only for files that are in a sequence and **start counting at 0**: Use them on things like ```Event0```, ```Event1```, ```Event2``` but not in ```Car0```, ```Car1```, ```Car2``` (try to identify these cars by what it makes them different).
-- Put descriptors on the left, that is, use ```RedCar``` instad of ```CarRed```. If you want to easily find all the car models together, use a folder. In general, folders are for grouping, filenames are for identifying.
+- Put descriptors on the left, that is, use ```RedCar``` instead of ```CarRed```. If you want to easily find all the car models together, use a folder. In general, folders are for grouping, filenames are for identifying.
 - For very specific things such as animations, it is ok to use a modifier at the end using something like an '**@**' or an underscore '**_**'. For example: Instead of ```JudgeDieAnimation``` use ```Judge@Death``` or for states of a button use ```Button_Active``` and ```Button_Inactive``` instead of something else.
 
 ## Folder Structure
 
 This will mainly refer to the structure of the **Assets** folder since there is where most if not all of the files to be created for this project will be added.
 
-- **```DynamicAssets```**: Assets that are meant to be loaded by ```Resources.Load()```. If we load something from a server during run time, it should also be loaded into a subfolder here.
+- **```DynamicAssets```**: Assets that are meant to be loaded by ```Resources.Load()```. If we load something from a server during runtime, it should also be loaded into a subfolder here.
 - **```Common```**: The dynamic assets that will be packed with the game.
 - **```Resources```**: Inside every folder in ```DynamicAssets``` there should be a ```resources``` folder that will make its contents available to dynamically load at runtime.
 - **```Editor```**: Contains all the editor scripts.
-- **```Extensions```**: All the third-party extensions/packages we might use should be here instead of in the root of the project.
+- **```Extensions```**: All the third-party extensions/packages we might use should be here instead of at the root of the project.
 - **```Plugins```**: Plug-ins that extend Unity's features. Generally these are native dynamic libraries in C or C++.
 - **```Scratchpad```**: Contains things that are not yet ready to include in the project or that are being tweaked/tested before adding them. To use this folder you  should be using a *subfolder with your name*.
 - **```Scripts```**: All the scripts for the project. Inside they should be grouped in folders by their theme and functionality. E.g. the script that deals with the movement of the hoverboard could be in a ```hoverboard/``` or ```hoverboard/movement/``` folder.
@@ -42,7 +42,7 @@ This will mainly refer to the structure of the **Assets** folder since there is 
 
 As mentioned, this is a structure that should change whenever the project requires it. Any suggestions that might make the job of someone in the team easier should be made sooner rather than later.
 
-Also, this is not a hard structure, it is just to make our lifes easier. When adding something to a folder like the ones on ```StaticAssets/``` feel free to try to organize it so it makes the most sense. E.g. it is not particularly critical to have a building model in something like ```/StaticAssets/Models/Buildings/Skyscrapers/``` or in  ```/StaticAssets/Models/City/``` as long as it is consistent and it makes sense.
+Also, this is not a hard structure, it is just to make our lives easier. When adding something to a folder like the ones on ```StaticAssets/``` feel free to try to organize it so it makes the most sense. E.g. it is not particularly critical to have a building model in something like ```/StaticAssets/Models/Buildings/Skyscrapers/``` or in  ```/StaticAssets/Models/City/``` as long as it is consistent and it makes sense.
 
 ### Folders Relevant for Artists
 
@@ -73,7 +73,7 @@ To mark a section of the code with something relevant, the syntax to do so in a 
 // @TODO(name): This is what needs to be done here
 ```
 
-All of the possible annotations should be in this document so we can search for them in the whole project easily. That is, don't make your own ```@THIS_COULD_BREAK(ruben)``` without telling the other programmers and adding that annotation type to this document.
+All of the possible annotations should be in this document so we can search for them in the whole project easily. That is, don't make your own ```@THIS_COULD_BREAK(Ruben)``` without telling the other programmers and adding that annotation type to this document.
 
 #### Current Annotations
 
@@ -81,7 +81,7 @@ All of the possible annotations should be in this document so we can search for 
 - ```// @NOTE(name): What you are annotating that people should have in mind when looking at the code```
 - ```// @FIX(name): There is something wrong here, you try to explain what it is and what could be causing it```
 - ```// @HACK(name): Marks that this is a hacky way to do something, why it is hacky and maybe what we could do to implement it correctly```
-- ```// @DOING(name): Marks that you were working here but had to stop (went to work on some other part of the code, the working day was over, or some other thing). Descrive here what you were doing and what you were planning to do to make it easier for yourself to come back.```
+- ```// @DOING(name): Marks that you were working here but had to stop (went to work on some other part of the code, the working day was over, or some other thing). Describe here what you were doing and what you were planning to do to make it easier for yourself to come back.```
 
 ### Documenting Code
 
