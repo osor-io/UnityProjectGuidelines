@@ -19,26 +19,32 @@ Other important principles that should be followed are:
 
 ## Folder Structure
 
-This will mainly refer to the structure of the **Assets** folder since there is where most if not all of the files to be created for this project will be added.
+In the root of the **```Assets```** folder we will have all the extensions, plugins or external files that require a specific folder structure to work (e.g. the Wwise folder needs to be at Assets/Wwise or other*wise* it won't work). Some of the files
 
-- **```DynamicAssets```**: Assets that are meant to be loaded by ```Resources.Load()```. If we load something from a server during runtime, it should also be loaded into a subfolder here.
-- **```Common```**: The dynamic assets that will be packed with the game.
-- **```Resources```**: Inside every folder in ```DynamicAssets``` there should be a ```resources``` folder that will make its contents available to dynamically load at runtime.
-- **```Editor```**: Contains all the editor scripts.
 - **```Extensions```**: All the third-party extensions/packages we might use should be here instead of at the root of the project.
 - **```Plugins```**: Plug-ins that extend Unity's features. Generally these are native dynamic libraries in C or C++.
+- **```ProjectAssets```**: This is the folder that contains all the assets that we made for the project. 
+- **```Standard Assets```**: This is where Unity puts all of its standard assets.
+- **```StreamingAssets```**: Assets to be loaded into the game as raw data, not using Unity's runtime importing system.
+
+
+This will mainly refer to the structure of the **Assets/ProjectAssets** folder since there is where most if not all of the files to be created for this project will be added.
+
+- **```DynamicAssets```**: Assets that are meant to be loaded by ```Resources.Load()```. If we load something from a server during runtime, it should also be loaded into a subfolder here.
+  - **```Common```**: The dynamic assets that will be packed with the game.
+    - **```Resources```**: Inside every folder in ```DynamicAssets``` there should be a ```resources``` folder that will make its contents available to dynamically load at runtime.
+- **```Editor```**: Contains all the editor scripts.
 - **```Scratchpad```**: Contains things that are not yet ready to include in the project or that are being tweaked/tested before adding them. To use this folder you  should be using a *subfolder with your name*.
 - **```Scripts```**: All the scripts for the project. Inside they should be grouped in folders by their theme and functionality. E.g. the script that deals with the movement of the hoverboard could be in a ```hoverboard/``` or ```hoverboard/movement/``` folder.
 - **```Shaders```**: Contains all the shader files that we might develop for the project.
-- **```Standard Assets```**: This is where Unity puts all of its standard assets.
 - **```StaticAssets```**: Here we should place all of the assets that will be treated as static resources (Used directly into scenes). *This is probably the most relevant folder for non-programmers.* Also, the content if each of these folders should be organized by theme. That means that something like the models of a particular character should be in something like ```Models/Characters/ParticularCharacter/```. I think in general we all have an idea of where we should put stuff and when to group it in folders :D
-- **Animations**
-- **Effects**
-- **Models**
-- **Prefabs**
-- **Scenes**
-- **Sounds**
-- **Textures**
+  - **Animations**
+  - **Effects**
+  - **Models**
+  - **Prefabs**
+  - **Scenes**
+  - **Sounds**
+  - **Textures**
 
 As mentioned, this is a structure that should change whenever the project requires it. Any suggestions that might make the job of someone in the team easier should be made sooner rather than later.
 
@@ -46,18 +52,18 @@ Also, this is not a hard structure, it is just to make our lives easier. When ad
 
 ### Folders Relevant for Artists
 
-- **```StaticAssets/Animations```**
-- **```StaticAssets/Models```**
-- **```StaticAssets/Textures```**
+- **```ProjectAssets/StaticAssets/Animations```**
+- **```ProjectAssets/StaticAssets/Models```**
+- **```ProjectAssets/StaticAssets/Textures```**
 
 ### Folders Relevant for Designers
 
-- **```StaticAssets/Prefabs```**
-- **```StaticAssets/Scenes```**
+- **```ProjectAssets/StaticAssets/Prefabs```**
+- **```ProjectAssets/StaticAssets/Scenes```**
 
 ### Folders Relevant for Audio
 
-- **```StaticAssets/Sounds```**
+- **```ProjectAssets/StaticAssets/Sounds```**
 
 ## Coding Standards
 
